@@ -11,6 +11,7 @@ import Upload from '@/view/Upload.vue'
                 <h2>这是一个基于Vue.js + Node.js + Mysql的全栈项目</h2>
                 <h3>用户信息</h3>
                 <h2 class="usershow">用户名：{{ username }}</h2>
+                <el-link type="primary" href="rmbg">去抠图</el-link>
             </div>
         </div>
     </header>

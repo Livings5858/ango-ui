@@ -31,6 +31,10 @@ const routes = [
         path: '/imgshow',
         component: () => import('@/view/ImgShow.vue'),
     },
+    {
+        path: '/rmbg',
+        component: () => import('@/view/Rmbg.vue'),
+    }
 
 ]
 
