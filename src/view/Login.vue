@@ -1,6 +1,7 @@
 <script setup>
 import HelloWorld from '@/components/HelloWorld.vue'
 import request from '@/utils/request'
+import '../assets/main.css'
 </script>
 
 <template>

@@ -1,21 +1,30 @@
 <template>
     <div>
+        <h1 class="title">数字签名制作</h1>
+        <h2 class="title">上传一张白纸手写签名图片，自动去除背景，截取签名</h2>
+        <p class="title" style="color: chocolate;">严正声明：纯前端处理，不会保存任何用户数据</p>
+    </div>
+    <div class="use-flexbox">
         <el-card shadow="always">
-            <el-row class="row-bg" justify="space-evenly">
-                <el-col :span="8">
-                    <div class="btn">
-                        <input type="file" @change="onFileChange" />
-                    </div>
-                    <div class="imgBackgroung">
-                        <img :src="imgSrc" width="200" height="200" v-if="imgSrc !== ''" />
+            <el-row class="row-bg" justify="space-around" :gutter="20">
+                <el-col :span="12">
+                    <div>
+                        <div class="btn">
+                            <input type="file" @change="onFileChange" />
+                        </div>
+                        <div class="imgBackgroung">
+                            <img :src="imgSrc" width="400" height="400" v-if="imgSrc !== ''" />
+                        </div>
                     </div>
                 </el-col>
-                <el-col :span="8">
-                    <div class="btn">
-                        <button @click="download">下载</button>
-                    </div>
-                    <div class="imgBackgroung">
-                        <img :src="imgDst" :width="imgDstWidth" :height="imgDstHeight" v-if="imgDst !== ''" />
+                <el-col :span="12">
+                    <div>
+                        <div class="btn">
+                            <button @click="download" :disabled="imgDst === ''">下载</button>
+                        </div>
+                        <div class="imgBackgroung">
+                            <img :src="imgDst" :width="imgDstWidth" :height="imgDstHeight" v-if="imgDst !== ''" />
+                        </div>
                     </div>
                 </el-col>
             </el-row>
@@ -139,7 +148,7 @@ export default {
         download() {
             const a = document.createElement('a')
             a.href = this.imgDst
-            a.download = 'download'
+            a.download = '数字签名'
             a.click()
             a.remove()
         }
@@ -151,8 +160,8 @@ export default {
 <style scoped>
 .imgBackgroung {
     background-color: #eee;
-    width: 200px;
-    height: 200px;
+    width: 400px;
+    height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -161,5 +170,22 @@ export default {
 .btn {
     margin-bottom: 20px;
 }
+
+.use-flexbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 600px;
+    /* border: 1px solid #000; */
+    /* background: #099; */
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
 
 </style>

@@ -1,3 +1,7 @@
+<script setup>
+import '../assets/main.css'
+</script>
+
 <template>
     <!-- home 页面 -->
     <div class="home">
